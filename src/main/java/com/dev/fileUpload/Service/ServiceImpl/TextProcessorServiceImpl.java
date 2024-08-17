@@ -7,6 +7,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 /**
@@ -23,6 +24,11 @@ public class TextProcessorServiceImpl implements TextProcessorService {
                 .collect(Collectors.groupingBy(String::toLowerCase, Collectors.counting()));
 
         String mostUsedWord = Collections.max(wordCountMap.entrySet(), Map.Entry.comparingByValue()).getKey();
-        return text.replace("\\b" +mostUsedWord+"\\b","foo" + mostUsedWord + "bar");
+
+        String escapeMostusedWord = Pattern.quote(mostUsedWord);
+
+        // Replace all occurrences of the most used word with 'foo' + word + 'bar'
+        return text.replaceAll("(?i)\\b" + escapeMostusedWord + "\\b", "foo" + mostUsedWord + "bar");
+
     }
 }
