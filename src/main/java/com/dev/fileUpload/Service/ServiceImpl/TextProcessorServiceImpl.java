@@ -11,7 +11,7 @@ import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 /**
- * @author tomiloba
+ * @author
  * 8/17/24
  */
 
@@ -27,7 +27,7 @@ public class TextProcessorServiceImpl implements TextProcessorService {
 
         String escapeMostusedWord = Pattern.quote(mostUsedWord);
 
-        // Replace all occurrences of the most used word with 'foo' + word + 'bar'
+
         return text.replaceAll("(?i)\\b" + escapeMostusedWord + "\\b", "foo" + mostUsedWord + "bar");
 
     }
