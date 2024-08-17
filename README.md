@@ -71,16 +71,7 @@ GET /
 
 Upload a text file for processing.
 
-URL: /process-file
-Method: POST
-Content-Type: multipart/form-data
-File Parameter: file
-Success Response:
-Code: 200 OK
-Content: Processed text with the most frequent word surrounded by foo and bar.
-Error Responses:
-Code: 400 BAD REQUEST
-Content: Error message (e.g., "File is empty" or "File is missing").
+Thank you :)
 
 
 
